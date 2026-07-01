@@ -200,11 +200,12 @@
         </header>
 
         <nav>
-            <a href="#layout">Layout</a>
-            <a href="#code">Code Samples</a>
-            <a href="#forms">Forms</a>
-            <a href="#symbols">Symbols & Emojis</a>
-            <a href="#xhtml">HTML vs XHTML</a>
+            <a href="#layout">Overview</a>
+            <a href="#code">Schedule</a>
+            <a href="#location">Location</a>
+            <a href="#forms">Registration</a>
+            <a href="#faq">FAQ</a>
+            <a href="#demo">Tech Demo</a>
         </nav>
 
         <div class="container">
@@ -231,7 +232,7 @@
 
                 </article>
 
-                <article class="card">
+                <article id="code" class="card">
                     <h2><b></b>Event Schedule ✓</h2>
                     <ul>
                     <li><strong>Day 1:</strong> Opening Program and Keynote Talks</li>
@@ -247,7 +248,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article id="location" class="card">
                     <h2><b></b>Event Location & Map</h2>
                     <p>
                         All events will be held at the SMCC Main Campus-IT Building. Use the embedded map below to find
@@ -398,11 +399,29 @@ the location easily</p>
 
         <p id="form-result" class="success"></p>
 
-    </form>
+        </form>
 
-</article>
+        </article>
 
-                <article id="code" class="card">
+                <article id="faq" class="card">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Use the button below to interact with the page:</p>
+                    
+                    <button type="button" class="primary-btn" onclick="toggleMessage()">Toggle FAQ Visibility</button>
+
+                    <div id="info-message" style="margin-top: 20px;">
+                        <p><strong>1. Is the event open to all students?</strong></p>
+                        <p>Yes, the event is open to all departments and year levels.</p>
+
+                        <p><strong>2. Do I need to register?</strong></p>
+                        <p>Yes, registration is required for competitions, workshops, and project showcases.</p>
+
+                        <p><strong>3. Is there a registration fee?</strong></p>
+                        <p>No, all SMCC-CCIS Week 2026 activities are free of charge.</p>
+                    </div>
+                </article>
+
+                <article id="demo" class="card">
 
     <h2>Tech Demo & Developer Notes</h2>
 
