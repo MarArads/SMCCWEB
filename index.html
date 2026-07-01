@@ -52,12 +52,33 @@
         }
 
         .sidebar {
-            flex: 1 1 200px;
-            background-color: #ffffff;
-            border-radius: 6px;
-            padding: 15px;
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-        }
+    flex: 1 1 200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+        margin-top: 0;
+        font-size: 28px;
+    }
+
+    .sidebar h3 {
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    .sidebar ul {
+        padding-left: 20px;
+        line-height: 1.8;
+    }
+
+    .sidebar hr {
+        margin: 25px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
 
         .card {
             background-color: #ffffff;
@@ -113,70 +134,33 @@
         }
 
         form {
-            display: grid;
-            gap: 12px;
-            margin-top: 15px;
-        }
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    }
 
-        label {
-            font-weight: bold;
-        }
+    .form-row {
+        display: block;
+    }
 
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #bdbdbd;
-            border-radius: 5px;
-            font-size: 15px;
-            box-sizing: border-box;
-        }
+    .form-row div {
+        margin-bottom: 15px;
+    }
 
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #04db65;
-        }
+    .checkbox-group,
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .checkbox-group,
-        .radio-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .checkbox-group label,
-        .radio-group label {
-            font-weight: normal;
-        }
-
-        .success {
-            color: green;
-            font-weight: bold;
-        }
-
-        @media (max-width: 700px) {
-            .container {
-                flex-direction: column;
-            }
-
-            nav a {
-                display: inline-block;
-                margin-bottom: 6px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
+    .checkbox-group label,
+    .radio-group label {
+        display: block;
+        font-weight: normal;
+    }
     </style>
 
     <script>
@@ -249,16 +233,16 @@
 
                 <article class="card">
                     <h2><b></b>Event Schedule ✓</h2>
-<ul>
-  <li><strong>Day 1:</strong> Opening Program and Keynote Talks</li>
-  <li><strong>Day 2:</strong> Coding Hackathon</li>
-  <li><strong>Day 3:</strong> Robotics and IoT Exhibition</li>
-  <li><strong>Day 4:</strong> Cybersecurity Awareness Session</li>
-  <li><strong>Day 5:</strong> Project Showcase and Awarding Ceremony</li>
-</ul>
+                    <ul>
+                    <li><strong>Day 1:</strong> Opening Program and Keynote Talks</li>
+                    <li><strong>Day 2:</strong> Coding Hackathon</li>
+                    <li><strong>Day 3:</strong> Robotics and IoT Exhibition</li>
+                    <li><strong>Day 4:</strong> Cybersecurity Awareness Session</li>
+                    <li><strong>Day 5:</strong> Project Showcase and Awarding Ceremony</li>
+                    </ul>
 
 
-                    <div style="position:relative; padding: bottom 20; height: 2px; overflow:hidden; border-radius:2px;">
+                    <div style="position:relative; padding: bottom 80; height: 8px; overflow:hidden; border-radius:px;">
 
                     </div>
                 </article>
@@ -273,240 +257,256 @@ the location easily</p>
                 </article>
 
                 <article id="forms" class="card">
-                    <h2>4. HTML Forms</h2>
+    <h2>Event Registration Form 📋</h2>
 
-                    <p>
-                        HTML forms allow users to submit information such as event registrations,
-                        login credentials, surveys, and feedback. HTML5 also provides built-in
-                        validation features that help ensure correct user input.
-                    </p>
+    <p>
+        Please complete the form below to register for the SMCC-CCIS Week 2026 event.
+    </p>
 
-                    <form id="event-form" onsubmit="registerStudent(event)">
+    <form id="event-form" onsubmit="registerStudent(event)">
 
-                        <div class="form-row">
-                            <div>
-                                <label for="fullname">Full Name</label>
-                                <input
-                                    type="text"
-                                    id="fullname"
-                                    name="fullname"
-                                    placeholder="Enter your full name"
-                                    required
-                                    minlength="5">
-                            </div>
+        <label for="fullname">Full Name:</label>
+        <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your complete name"
+            required
+            minlength="5">
 
-                            <div>
-                                <label for="email">Email Address</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="example@gmail.com"
-                                    required>
-                            </div>
-                        </div>
+        <label for="email">Email Address:</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+            required>
 
-                        <div class="form-row">
-                            <div>
-                                <label for="studentid">Student ID</label>
-                                <input
-                                    type="text"
-                                    id="studentid"
-                                    name="studentid"
-                                    placeholder="202600123"
-                                    required
-                                    pattern="[0-9]{9}"
-                                    title="Student ID should contain exactly 9 digits.">
-                            </div>
+        <label for="studentid">Student ID Number:</label>
+        <input
+            type="text"
+            id="studentid"
+            name="studentid"
+            placeholder="Example: 202600123"
+            pattern="[0-9]{9}"
+            title="Student ID should contain exactly 9 digits."
+            required>
 
-                            <div>
-                                <label for="course">Course</label>
-                                <select id="course" name="course" required>
-                                    <option value="">Select Course</option>
-                                    <option value="BS Information Systems">BS Information Systems</option>
-                                    <option value="BS Computer Science">BS Computer Science</option>
-                                    <option value="BS Information Technology">BS Information Technology</option>
-                                </select>
-                            </div>
-                        </div>
+        <label for="contact">Contact Number:</label>
+        <input
+            type="tel"
+            id="contact"
+            name="contact"
+            placeholder="Example: 09123456789"
+            pattern="[0-9]{11}"
+            required>
 
-                        <div class="form-row">
-                            <div>
-                                <label for="birthdate">Birthdate</label>
-                                <input
-                                    type="date"
-                                    id="birthdate"
-                                    name="birthdate"
-                                    required>
-                            </div>
+        <label for="birthdate">Birthdate:</label>
+        <input
+            type="date"
+            id="birthdate"
+            name="birthdate"
+            required>
 
-                            <div>
-                                <label for="arrival">Arrival Time</label>
-                                <input
-                                    type="time"
-                                    id="arrival"
-                                    name="arrival"
-                                    required>
-                            </div>
-                        </div>
+        <label for="arrival">Preferred Arrival Time:</label>
+        <input
+            type="time"
+            id="arrival"
+            name="arrival"
+            required>
 
-                        <label>Participant Type</label>
-                        <div class="radio-group">
-                            <label>
-                                <input type="radio" name="participant_type" value="Student" required>
-                                Student
-                            </label>
+        <label for="yearlevel">Year Level:</label>
+        <select id="yearlevel" name="yearlevel" required>
+            <option value="">Select Year Level</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+        </select>
 
-                            <label>
-                                <input type="radio" name="participant_type" value="Faculty">
-                                Faculty
-                            </label>
+        <label>Participant Type:</label>
 
-                            <label>
-                                <input type="radio" name="participant_type" value="Guest">
-                                Guest
-                            </label>
-                        </div>
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="participant_type" value="Student" required>
+                Student
+            </label>
 
-                        <label>Activities to Join</label>
-                        <div class="checkbox-group">
-                            <label>
-                                <input type="checkbox" name="activity" value="Coding Contest">
-                                Coding Contest
-                            </label>
+            <label>
+                <input type="radio" name="participant_type" value="Faculty">
+                Faculty
+            </label>
 
-                            <label>
-                                <input type="checkbox" name="activity" value="Web Design">
-                                Web Design
-                            </label>
+            <label>
+                <input type="radio" name="participant_type" value="Guest">
+                Guest
+            </label>
+        </div>
 
-                            <label>
-                                <input type="checkbox" name="activity" value="Robotics">
-                                Robotics
-                            </label>
+        <label>Events to Join:</label>
 
-                            <label>
-                                <input type="checkbox" name="activity" value="Quiz Bowl">
-                                Quiz Bowl
-                            </label>
-                        </div>
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" name="activity" value="Coding Hackathon">
+                Coding Hackathon
+            </label>
 
-                        <label for="schoolid">Upload School ID</label>
-                        <input
-                            type="file"
-                            id="schoolid"
-                            name="schoolid"
-                            accept=".jpg,.jpeg,.png,.pdf">
+            <label>
+                <input type="checkbox" name="activity" value="Tech Quiz Bowl">
+                Tech Quiz Bowl
+            </label>
 
-                        <label for="comments">Comments</label>
-                        <textarea
-                            id="comments"
-                            name="comments"
-                            rows="4"
-                            placeholder="Write your comments..."
-                            maxlength="300"></textarea>
+            <label>
+                <input type="checkbox" name="activity" value="Robotics Exhibition">
+                Robotics Exhibition
+            </label>
 
-                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                            <button class="primary-btn" type="submit">
-                                Submit Registration
-                            </button>
+            <label>
+                <input type="checkbox" name="activity" value="Project Showcase">
+                Project Showcase
+            </label>
+        </div>
 
-                            <button class="reset-btn" type="reset">
-                                Reset Form
-                            </button>
-                        </div>
+        <label for="schoolid">Upload Proof of Registration or School ID:</label>
 
-                        <p id="form-result" class="success"></p>
+        <input
+            type="file"
+            id="schoolid"
+            name="schoolid"
+            accept=".jpg,.jpeg,.png,.pdf">
 
-                    </form>
-                </article>
+        <label for="comments">Reason for Joining:</label>
+
+        <textarea
+            id="comments"
+            name="comments"
+            rows="4"
+            placeholder="Write your reason for joining the event..."
+            maxlength="300"></textarea>
+
+        <div style="display:flex; gap:10px;">
+
+            <button class="primary-btn" type="submit">
+                Submit Registration
+            </button>
+
+            <button class="reset-btn" type="reset">
+                Clear Form
+            </button>
+
+        </div>
+
+        <p id="form-result" class="success"></p>
+
+    </form>
+
+</article>
 
                 <article id="code" class="card">
-                    <h2>5. Computer Code Tags</h2>
-                    <p>We can show code and computer-related text using special tags:</p>
 
-                    <div class="code-block">
-<pre><code>&lt;pre&gt; and &lt;code&gt; show preformatted code:
+    <h2>Tech Demo & Developer Notes</h2>
 
-function hello() {
-    console.log("Hello, world!");
-}
+    <h4>Sample Command Using &lt;pre&gt; and &lt;code&gt;</h4>
+
+    <div class="code-block">
+<pre><code>git clone https://github.com/example/ccisweek2026.git
+
+npm install
+
+npm run dev
 </code></pre>
-                    </div>
+    </div>
 
-                    <p>
-                        Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save your file.
-                        Program output example using <code>&lt;samp&gt;</code>:
-                        <samp>Build successful. No errors found.</samp>
-                    </p>
-                </article>
+    <p>
+        To save your changes, press <kbd>Ctrl</kbd> + <kbd>S</kbd>.
+        Example system output using <code>&lt;samp&gt;</code>:
+        <samp>Build successful. No errors found.</samp>
+    </p>
 
-                <article id="symbols" class="card">
-                    <h2>6. Entities, Symbols, Emojis & URL Encoding</h2>
+    <h4>Registration URL Example</h4>
 
-                    <p>
-                        HTML <strong>entities</strong> and <strong>symbols</strong>:
-                        &copy; 2026 InfoHub &mdash; All rights reserved.
-                        Heart symbol: &hearts;
-                        Check symbol: &#10003; (✓)
-                    </p>
+    <p>
+        Example registration URL with encoded spaces and symbols:
+    </p>
 
-                    <p>
-                        Emojis add expression: &#128516;&#128640;&#127793;
-                    </p>
+    <div class="code-block">
+        <code>https://myschool.edu/events/register?event=SMCC%20CCIS%20Week%202026&amp;section=A</code>
+    </div>
 
-                    <p>
-                        Example of a URL-encoded search query:
-                    </p>
+    <p>
+        Here, <strong>%20</strong> represents a space character in the URL.
+    </p>
 
-                    <div class="code-block">
-                        <code>https://example.com/search?query=HTML%20Advanced%20Topics%21</code>
-                    </div>
-                </article>
+    <h4>HTML vs XHTML Example</h4>
 
-                <article id="xhtml" class="card">
-                    <h2>7. HTML vs XHTML</h2>
+    <div class="code-block">
+<pre><code>&lt;br&gt;
+&lt;img src="images/logo.png" alt="Event Logo"&gt;
 
-                    <p>Below is a simple comparison of HTML and XHTML syntax:</p>
-
-                    <div class="code-block">
-<pre><code>&lt;!-- HTML version not self-closed --&gt;
-&lt;img src="images/profile.jpg" alt="Profile image"&gt;
-
-&lt;!-- XHTML-style version self-closed, lowercase, quoted attributes --&gt;
-&lt;img src="images/profile.jpg" alt="Profile image" /&gt;
+&lt;br /&gt;
+&lt;img src="images/logo.png" alt="Event Logo" /&gt;
 </code></pre>
-                    </div>
+    </div>
 
-                    <p>
-                        XHTML is stricter and requires properly closed tags, lowercase names, and quoted attributes.
-                    </p>
-                </article>
+    <p>
+        XHTML requires lowercase tags, quoted attributes, and properly closed elements.
+    </p>
+
+    <h4>Entities, Symbols &amp; Emojis</h4>
+
+    <p>
+        &copy; 2026 SMCC-CCIS Week &nbsp;
+        &hearts; &nbsp;
+        &#10003; &nbsp;
+        &#128187; &nbsp;
+        &#128640; &nbsp;
+        &#127891;
+    </p>
+
+</article>
 
             </section>
 
             <aside class="sidebar">
-                <h3>Quick Info Panel</h3>
 
-                <p>
-                    This <code>&lt;aside&gt;</code> acts as a sidebar. It demonstrates
-                    how semantic tags improve layout and meaning.
-                </p>
+    <h2>Event Info &amp; Contacts</h2>
 
-                <p>
-                    This page follows a simple <strong>style guide</strong>:
-                    lowercase tag names, consistent indentation, semantic elements,
-                    meaningful class and ID names, and UTF-8 charset.
-                </p>
+    <p>
+        SMCC-CCIS Week 2026 is organized by the College of Computing and Information Sciences.
+    </p>
 
-                <p>
-                    Character encoding is defined using:
-                </p>
+    <p>
+        For inquiries, email:
+        <strong>ccisweek@myschool.edu</strong>
+    </p>
 
-                <div class="code-block">
-                    <code>&lt;meta charset="UTF-8"&gt;</code>
-                </div>
-            </aside>
+    <h3>Event Highlights:</h3>
+
+    <ul>
+        <li>Live coding sessions</li>
+        <li>Industry speakers</li>
+        <li>Project exhibits</li>
+    </ul>
+
+    <hr>
+
+    <h3>Character Encoding</h3>
+
+    <p>
+        This page uses UTF-8 encoding, defined as:
+    </p>
+
+    <div class="code-block">
+        <code>&lt;meta charset="UTF-8"&gt;</code>
+    </div>
+
+    <p>
+        Special characters and entities:
+        &copy; 2026 SMCC-CCIS Week &middot;
+        Made with &hearts;
+    </p>
+
+</aside>
 
         </div>
 
